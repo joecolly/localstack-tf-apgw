@@ -1,0 +1,19 @@
+{
+  "name": "testlambda",
+  "version": "1.4.6",
+  "license": "ISC",
+  "main": "testlambda.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-bruno-effect/tbe-serverless-api.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/the-bruno-effect/tbe-serverless-api/issues"
+  }
+}
