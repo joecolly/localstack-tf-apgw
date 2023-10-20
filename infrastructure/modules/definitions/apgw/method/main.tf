@@ -19,21 +19,21 @@ resource "aws_api_gateway_integration" "this" {
   content_handling        = "CONVERT_TO_TEXT"
 }
 
-resource "aws_api_gateway_method_settings" "this" {
-  rest_api_id = var.rest_api_id
-  stage_name  = var.stage_name
-  method_path = "${trimprefix(var.path, "/")}/${var.method}"
-
-  settings {
-    metrics_enabled        = var.metrics_enabled
-    logging_level          = var.logging_level
-    caching_enabled        = var.caching_enabled
-    cache_ttl_in_seconds   = var.cache_ttl_in_seconds
-    cache_data_encrypted   = var.cache_data_encrypted
-    throttling_rate_limit  = var.rate_limit.rate
-    throttling_burst_limit = var.rate_limit.burst
-  }
-}
+#resource "aws_api_gateway_method_settings" "this" {
+#  rest_api_id = var.rest_api_id
+#  stage_name  = var.stage_name
+#  method_path = "${trimprefix(var.path, "/")}/${var.method}"
+#
+#  settings {
+#    metrics_enabled        = var.metrics_enabled
+#    logging_level          = var.logging_level
+#    caching_enabled        = var.caching_enabled
+#    cache_ttl_in_seconds   = var.cache_ttl_in_seconds
+#    cache_data_encrypted   = var.cache_data_encrypted
+#    throttling_rate_limit  = var.rate_limit.rate
+#    throttling_burst_limit = var.rate_limit.burst
+#  }
+#}
 
 resource "aws_api_gateway_method_response" "method_response_2xx" {
   depends_on      = [aws_api_gateway_method.this]
